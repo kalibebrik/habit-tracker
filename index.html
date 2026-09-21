@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Habit Tracker</title>
+</head>
+
+<body>
+    <main class="tracker-card">
+        <h1>Habit Tracker</h1>
+        <div class="input-group">
+            <input type="text" id="habit-input" placeholder="Add your Habit here...">
+            <button id="add-btn">Add Habit</button>
+        </div>
+        <div class="progress-container">
+            <span id="progress-text">Completed: 0 out of 0</span>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <ul id="habits-list">
+        </ul>
+        <div class="card-footer">
+            <button id="clear-completed-btn" class="clear-btn">Clear Completed</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
