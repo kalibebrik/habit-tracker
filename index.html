@@ -1,36 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Habit Tracker</title>
 </head>
 
 <body>
     <main class="tracker-card">
-        <h1>Habit Tracker</h1>
+        <div class="card-header">
+            <h1>Habit Tracker</h1>
+            <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle theme">
+                <!-- Sun icon (active in dark theme) -->
+                <svg class="theme-icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+
+                <!-- Moon icon (active in light theme) -->
+                <svg class="theme-icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+        </div>
+
         <div class="input-group">
-            <input type="text" id="habit-input" placeholder="Add your Habit here...">
+            <input type="text" id="habit-input" placeholder="Add your habit here..." autocomplete="off">
             <button id="add-btn">Add Habit</button>
         </div>
+
         <div class="progress-container">
-            <span id="progress-text">Completed: 0 out of 0</span>
+            <span id="progress-text">Completed: 0 of 0</span>
             <div class="progress-bar">
                 <div class="progress-fill" id="progress-fill"></div>
             </div>
         </div>
+
         <div class="filter-container">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="active">Active</button>
             <button class="filter-btn" data-filter="completed">Completed</button>
         </div>
-        <ul id="habits-list">
-        </ul>
+
+        <ul id="habits-list"></ul>
+
         <div class="card-footer">
             <button id="clear-completed-btn" class="clear-btn">Clear Completed</button>
         </div>
     </main>
+
+    <!-- Toast notifications container -->
+    <div id="toast-container" class="toast-container"></div>
+
     <script src="script.js"></script>
 </body>
 
